@@ -6,7 +6,7 @@ import {setList} from './features/list/listSlice.js'
 const api = "https://pokeapi.co/api/v2/pokemon?limit=151"
 
 const App = () => {
-const listData: any = useSelector(state => state)
+
 const dispatch = useDispatch()
   // const [data, setData] = useState<any>([])
 
@@ -16,6 +16,9 @@ const dispatch = useDispatch()
     .then(data => {
       console.log(data)
       dispatch(setList(data.results))
+  }).catch(error => {
+    console.log(error)
+    dispatch(setList([]))
   })
   },[])
 
@@ -23,7 +26,7 @@ const dispatch = useDispatch()
   return (
   <>
     <h1>Pokemon list:</h1>
-    <List list={listData?.list?.list}/>
+    <List/>
   </>
   )
 }
