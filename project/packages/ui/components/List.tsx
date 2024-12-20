@@ -1,3 +1,5 @@
+import '../../../apps/app/src/index.css'
+
 
 interface itemType { name: string, url: string }
 interface listType { list: itemType[] }
@@ -5,12 +7,12 @@ interface listType { list: itemType[] }
 const List = ({ list }: listType) => {
   console.log(list)
   return (
-    <ul>
+    <div className="parent">
     {list.map((item: itemType, i: any) => (
-      <li
-      key={`${item.name}-${i}`}>{item.name}</li>
+      <div className="child"
+      key={`${item.name}-${i}`}>{item.name}</div>
     ))}
-    </ul>
+    </div>
   )
 }
 

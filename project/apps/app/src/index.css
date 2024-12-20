@@ -1,0 +1,12 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.child {
+    text-align: start;
+    padding: 5px;
+    background-color: bisque;
+    border-radius: 5px;
+}
