@@ -8,10 +8,13 @@ export const listSlice = createSlice({
   reducers: {
     setList: (state, action) => {
       state.list = action.payload
+    },
+    removeItem: (state, action) => {
+      state.list = state.list.filter(item => item.name !== action.payload)
     }    
   },
 });
 
-export const { setList } = listSlice.actions;
+export const { setList, removeItem } = listSlice.actions;
 
 export default listSlice.reducer;
